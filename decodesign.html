@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+    <script src="jsbn.js"></script>
+    <script src="jsbn2.js"></script>
+    <script src="rsa.js"></script>
+    <script src="rsa2.js"></script>
+
+    <script>
+        var rsa = new RSAKey();
+        var dr = {
+            n: "C4E3F7212602E1E396C0B6623CF11D26204ACE3E7D26685E037AD2507DCE82FC\n28F2D5F8A67FC3AFAB89A6D818D1F4C28CFA548418BD9F8E7426789A67E73E41",
+            e: "10001",
+        };
+        var cyphertext = "9dafffebf5ec8e20f9d907bed9a36f7bfa7c04faef29a0f673899d5a383c6b31bec13abb82991816ef69f9a789f3985369dcf58d1fef7e86afa131288b856d04";
+        rsa.setPublic(dr.n, dr.e);
+        var cleartext = rsa.decodeSign(cyphertext);
+        console.log(cleartext);
+    </script>
+</body>
+</html>
